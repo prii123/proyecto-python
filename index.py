@@ -1,10 +1,11 @@
 from tkinter import *
-import main as v
+import vistas.main as vista
+# import vistas.patrimonio as patrimonio
 
 def main():
     root = Tk()
-    root.wm_title("Suma de numeros")
-    app = v.FrSuma(root)
+    root.wm_title("Declaracion de renta PN")
+    app = vista.Patrimonio(root)
     app.config(bg="pink", width=900, height=900)
     app.mainloop()
 
