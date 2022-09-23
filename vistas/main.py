@@ -54,7 +54,5 @@ class FrSuma(Frame):
             row=3, columnspan=2, sticky=W + E)
         ttk.Button(contenedorModulos, text='Select').grid(
             row=4, columnspan=2, sticky=W + E)
-      
-     
-      
+
 
