@@ -1,43 +1,36 @@
-class users:
+class Users:
     def __init__(self) -> None:
         pass
 
     __username = ""
     __password = ""
-    __fname = ""
-    __lname = ""
     __email = ""
     __date = ""
     __address = ""
-    __userid = 0
+    __userId = 0
+    __message = ""
 
     # setters
-    def setUsername(self,param):
+    def setUsername(self, param):
         self.__username=param
-    def setPassword(self,param):
+    def setPassword(self, param):
         self.__password=param
-    def setFname(self,param):
-        self.__fname=param
-    def setLname(self,param):
-        self.__lname=param
-    def setEmail(self,param):
+    def setEmail(self, param):
         self.__email=param
-    def setDate(self,param):
+    def setDate(self, param):
         self.__date=param
-    def setAddress(self,param):
+    def setAddress(self, param):
         self.__address=param
-    def setUserid(self,param):
+    def setUserid(self, param):
         self.__userid=param
+    def setMessage(self, param):
+        self.__message=param
 
     # metodos getter
     def getUsername(self):
         return self.__username
     def getPassword(self):
         return self.__password
-    def getFname(self):
-        return self.__fname
-    def getLname(self):
-        return self.__lname
     def getEmail(self):
         return self.__email
     def getDate(self):
@@ -46,8 +39,11 @@ class users:
         return self.__address
     def getUserid(self):
         return self.__userid
+    def setMessage(self):
+        return self.__message
 
-
-# u = users()
-# u.setUsername("brayan")
-# print(u.getUsername())
+"""
+u = users()
+u.setUsername("brayan")
+print(u.getUsername())
+"""
