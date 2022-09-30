@@ -7,12 +7,31 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+import accountController as acount
+from modelos.users import Users
 
 
 class Ui_Login(object):
-    def onClickButtonLogin(self):
-        print('pulso el boton login')
 
+    def funcionQueTomadatosyLoguea(self):
+        # creamos una instancia del objeto usuario
+        usuario = Users()
+        # creamos una instancia del objeto login
+        logg = acount.Account()
+        #tomamos valores de los input
+        usr = self.username.text()
+        pss = self.password.text()
+        # seteamos los parametros al objeto usuario
+        usuario.setUsername(usr)
+        usuario.setPassword(pss)
+
+        # logueamos al usuario
+        logueo = logg.login(usuario)
+        print(logueo)
+
+
+        #cierra la ventana de login
+        #self.close()
 
     def setupUi(self, Login):
         Login.setObjectName("Login")
@@ -22,7 +41,9 @@ class Ui_Login(object):
         self.dtn_login = QtWidgets.QPushButton(self.centralwidget)
         self.dtn_login.setGeometry(QtCore.QRect(90, 120, 75, 23))
         self.dtn_login.setObjectName("dtn_login")
-        self.dtn_login.clicked()
+        #agrega evento de click
+        self.dtn_login.clicked.connect(self.funcionQueTomadatosyLoguea)
+
         self.username = QtWidgets.QLineEdit(self.centralwidget)
         self.username.setGeometry(QtCore.QRect(70, 30, 113, 20))
         self.username.setObjectName("username")
@@ -37,9 +58,6 @@ class Ui_Login(object):
         self.statusbar = QtWidgets.QStatusBar(Login)
         self.statusbar.setObjectName("statusbar")
         Login.setStatusBar(self.statusbar)
-
-
-
 
 
         self.retranslateUi(Login)
